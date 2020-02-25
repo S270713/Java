@@ -2,6 +2,10 @@ public class Player {
     private int number = 0;//введенное пользователем число
     private String name;
 
+    public Player(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -16,9 +20,5 @@ public class Player {
 
     public void setNumber(int number) {
         this.number = number;
-    }
-
-    public Player(String name) {
-        this.name = name;
     }
 }
