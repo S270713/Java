@@ -1,3 +1,5 @@
+package com.startjavanew.Lesson_2_3.other;
+
 public class Wolf2 {
     private String name;
     private String color;

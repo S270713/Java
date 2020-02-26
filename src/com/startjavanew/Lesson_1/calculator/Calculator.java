@@ -1,3 +1,5 @@
+package com.startjavanew.Lesson_1.calculator;
+
 public class Calculator {
     public static void main(String[] args) {
         double a = 17;

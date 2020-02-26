@@ -1,3 +1,5 @@
+
+
 public class Player {
     private int number = 0;//введенное пользователем число
     private String name;

@@ -1,3 +1,5 @@
+package com.startjavanew.Lesson_2_3.other;
+
 public class WolfTest2 {
     public static void main(String[] args) {
         Wolf2 firstStrong = new Wolf2();

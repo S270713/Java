@@ -1,3 +1,5 @@
+package com.startjavanew.Lesson_1.other;
+
 public class Variable {
     public static void main(String[] args) {
         byte memorySize = 4;
