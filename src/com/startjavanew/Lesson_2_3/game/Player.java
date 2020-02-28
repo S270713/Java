@@ -1,4 +1,4 @@
-
+package com.startjavanew.Lesson_2_3.game;
 
 public class Player {
     private int number = 0;//введенное пользователем число
