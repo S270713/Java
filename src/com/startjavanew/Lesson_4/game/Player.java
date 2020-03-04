@@ -1,19 +1,20 @@
 package com.startjavanew.Lesson_4.game;
 
 public class Player {
-    private int number = 0;//введенное пользователем число
-    private String name;
 
-    int[] arrayPlayer = new int[10];//поле для хранения введенных чисел
-    public void setArrayPlayer(int[] arrayPlayer) {
-        this.arrayPlayer = arrayPlayer;
-    }
-    public int[] getArrayPlayer() {
-        return arrayPlayer;
-    }
+    private String name;
+    private int[] attempts = new int[10];//поле для хранения введенных чисел
+    private int number = 0;//введенное пользователем число
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public void setAttempts(int k, int value) {
+        attempts[k] = value;
+    }
+    public int[] getAttempts() {
+        return attempts;
     }
 
     public String getName() {
