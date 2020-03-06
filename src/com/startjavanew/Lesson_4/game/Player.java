@@ -10,9 +10,10 @@ public class Player {
         this.name = name;
     }
 
-    public void setAttempts(int k, int value) {
-        attempts[k] = value;
+    public void setAttempts(int index, int number) {
+        attempts[index] = number;
     }
+
     public int[] getAttempts() {
         return attempts;
     }

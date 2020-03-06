@@ -17,7 +17,7 @@ public class GuessNumberTest {
         String replayGame = "";
 
         do {
-            game.start(player1, player2);
+            game.start();
             do {
                 System.out.println("Выберите ответ из предлагаемых вариантов.");
                 System.out.print("Хотите продолжить? [да / нет]: ");
