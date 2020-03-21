@@ -11,7 +11,7 @@ public class GuessNumberTest {
 
         System.out.println("Введите имя второго игрока: ");
         Player player2 = new Player(input.nextLine());
-
+        
         GuessNumber game = new GuessNumber(player1, player2);
 
         String replayGame = "";
