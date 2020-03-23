@@ -13,14 +13,10 @@ public class Player {
     }
 
     public int[] getAttempts() {
-        return Arrays.copyOf(attempts, numberOfAttempt+1);
-    }
-    //геттер для очистки массива
-    public int[] getAttemptsZero() {
-        return attempts;
+        return Arrays.copyOf(attempts, numberOfAttempt + 1);
     }
 
-    public void setAttempts(int index, int number) {
+    public void setAttempt(int index, int number) {
         attempts[index] = number;
     }
 

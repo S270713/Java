@@ -17,34 +17,20 @@ public class GuessNumber {
     }
 
     public void start() {
-        int number = 0;//введенное пользователем число
-        int secretNumber;
-        player1.setNumberOfAttempt(0);//номер варианта(попытки)
-        player2.setNumberOfAttempt(0);
+
+        actualPlayer = player1;
         System.out.println();
         System.out.println("У вас 10 попыток.");
 
-        secretNumber = ((int) (101 * Math.random()));
+        int secretNumber = ((int) (101 * Math.random()));
         System.out.println("Загаданное число: " + secretNumber);
 
         do {
-            actualPlayer = (player1.getNumberOfAttempt() == player2.getNumberOfAttempt()) ? player1 : player2;
+            int number = enterOfNumber();// метод ввода чисел (введенное пользователем число)
 
-            System.out.println();
-            System.out.println("Просим вас ввести число, " + actualPlayer.getName());
-            number = input.nextInt();
-            actualPlayer.setAttempts(actualPlayer.getNumberOfAttempt(), number);
-
-            if (number == secretNumber) {
-                System.out.println("Игрок " + actualPlayer.getName() + " угадал число " + number + " с " + (actualPlayer.getNumberOfAttempt() + 1) + " попытки.");
-                if (player1.getNumberOfAttempt() > player2.getNumberOfAttempt()) {
-                    player1.setNumberOfAttempt((player1.getNumberOfAttempt())-1);
-                }
+            boolean checkOk = checkOfNumber(number, secretNumber);// проверка чисел
+            if (checkOk == true) {
                 break;
-            } else if (secretNumber > number) {
-                System.out.println(actualPlayer.getName() + ", загаданное число больше вашего варианта.");
-            } else {
-                System.out.println(actualPlayer.getName() + ", загаданное число меньше вашего варианта.");
             }
 
             if (player1.getNumberOfAttempt() == player2.getNumberOfAttempt()) {
@@ -65,15 +51,47 @@ public class GuessNumber {
 
                 player2.setNumberOfAttempt((player2.getNumberOfAttempt())+1);
             }
+
+            actualPlayer = (actualPlayer == player1) ? player2 : player1;//чередование игроков
+
         } while(true);
         System.out.println(Arrays.toString(player1.getAttempts()));
         System.out.println(Arrays.toString(player2.getAttempts()));
 
         cleanOfVariants(); //очистка заполненных вариантов
+
+        player1.setNumberOfAttempt(0);//номер варианта(попытки)
+        player2.setNumberOfAttempt(0);
+
+    }
+    // метод ввода чисел
+    public int enterOfNumber() {
+        System.out.println();
+        System.out.println("Просим вас ввести число, " + actualPlayer.getName());
+        int number = input.nextInt();
+        actualPlayer.setAttempt(actualPlayer.getNumberOfAttempt(), number);
+        return number;
+    }
+    // проверка чисел
+    public boolean checkOfNumber(int number, int secretNumber) {
+        if (number == secretNumber) {
+            System.out.println("Игрок " + actualPlayer.getName() + " угадал число " + number + " с " + (actualPlayer.getNumberOfAttempt() + 1) + " попытки.");
+            if (player1.getNumberOfAttempt() > player2.getNumberOfAttempt()) {
+                player1.setNumberOfAttempt((player1.getNumberOfAttempt()) - 1);
+            }
+            return true;
+        } else if (secretNumber > number) {
+            System.out.println(actualPlayer.getName() + ", загаданное число больше вашего варианта.");
+        } else {
+            System.out.println(actualPlayer.getName() + ", загаданное число меньше вашего варианта.");
+        }
+        return false;
     }
     //очистка заполненных вариантов
     public void cleanOfVariants() {
-        Arrays.fill(player1.getAttemptsZero(), 0, player1.getNumberOfAttempt(),0);
-        Arrays.fill(player2.getAttemptsZero(), 0, player2.getNumberOfAttempt(),0);
+        for (int i = 0; i <= player1.getNumberOfAttempt(); i++) {
+            player1.setAttempt(i, 0);
+            player2.setAttempt(i, 0);
+        }
     }
 }
