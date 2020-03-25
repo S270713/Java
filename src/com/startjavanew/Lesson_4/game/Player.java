@@ -13,6 +13,7 @@ public class Player {
     }
 
     public int[] getAttempts() {
+        //return attempts;
         return Arrays.copyOf(attempts, numberOfAttempt + 1);
     }
 
