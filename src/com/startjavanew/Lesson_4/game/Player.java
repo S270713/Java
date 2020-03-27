@@ -13,12 +13,11 @@ public class Player {
     }
 
     public int[] getAttempts() {
-        //return attempts;
         return Arrays.copyOf(attempts, numberOfAttempt + 1);
     }
 
-    public void setAttempt(int index, int number) {
-        attempts[index] = number;
+    public void setAttempt(int number) {
+        attempts[numberOfAttempt] = number;
     }
 
     public String getName() {
