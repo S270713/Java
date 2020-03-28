@@ -10,7 +10,6 @@ public class GuessNumber {
     private Player player2;
     private Player actualPlayer;
     private int secretNumber;
-    private int[] attemptsBuffer = new int[10];
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -26,40 +25,26 @@ public class GuessNumber {
 
         do {
             enterNumber();// метод ввода чисел (введенное пользователем число)
-
             // проверка чисел
-            if (compareNumbers(actualPlayer) == true) {
-                /*выравниваем кол-во попыток у игроков для вывода всех вариантов после того,
-                как число отгадал второй игрок, т.к. у первого игрока счетчик попыток инкрементировался
-                */
-                if (player1.getNumberOfAttempt() > player2.getNumberOfAttempt()) {
-                    player1.setNumberOfAttempt((player1.getNumberOfAttempt()) - 1);
-                }
+            if (compareNumbers()) {
                 break;
             }
 
-            if (player1.getNumberOfAttempt() == player2.getNumberOfAttempt()) {
+            if ((actualPlayer == player1) & (player1.getNumberOfAttempt() == 9)) {
+                System.out.println(actualPlayer.getName() + ", у вас закончились попытки.");
+            }
 
-                if (actualPlayer.getNumberOfAttempt() == 9) {
-                    System.out.println(actualPlayer.getName() + ", у вас закончились попытки.");
-                }
-
-                player1.setNumberOfAttempt((player1.getNumberOfAttempt())+1);
-            } else {
-
-                if (player2.getNumberOfAttempt() == 9) {
-                    System.out.println(actualPlayer.getName() + ", у вас закончились попытки.");
-                    //выравниваем индекс кол-ва попыток у игроков для вывода всех вариантов:
-                    player1.setNumberOfAttempt((player1.getNumberOfAttempt())-1);
-                    break;
-                }
-
-                player2.setNumberOfAttempt((player2.getNumberOfAttempt())+1);
-
+            if ((actualPlayer == player2) & (player2.getNumberOfAttempt() == 9)) {
+                System.out.println(actualPlayer.getName() + ", у вас закончились попытки.");
+                break;
             }
 
             actualPlayer = (actualPlayer == player1) ? player2 : player1;//чередование игроков
 
+            if (actualPlayer == player1) {
+                player1.setNumberOfAttempt((player1.getNumberOfAttempt())+1);
+                player2.setNumberOfAttempt((player2.getNumberOfAttempt())+1);
+            }
         } while(true);
 
         System.out.println(Arrays.toString(player1.getAttempts()));
@@ -70,7 +55,6 @@ public class GuessNumber {
 
         player1.setNumberOfAttempt(0);//номер варианта(попытки)
         player2.setNumberOfAttempt(0);
-
     }
 
     // метод ввода чисел
@@ -80,9 +64,8 @@ public class GuessNumber {
     }
 
     // проверка чисел
-    private boolean compareNumbers(Player actualPlayer) {
-        attemptsBuffer = actualPlayer.getAttempts();
-        int number = attemptsBuffer[actualPlayer.getNumberOfAttempt()];
+    private boolean compareNumbers() {
+        int number = actualPlayer.getAttempt();
 
         if (number == secretNumber) {
             System.out.println("Игрок " + actualPlayer.getName() + " угадал число " + number + " с " + (actualPlayer.getNumberOfAttempt() + 1) + " попытки.");

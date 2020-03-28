@@ -15,6 +15,10 @@ public class Player {
     public int[] getAttempts() {
         return Arrays.copyOf(attempts, numberOfAttempt + 1);
     }
+    //возвращает последнее введенное игроком число:
+    public int getAttempt() {
+        return attempts[numberOfAttempt];
+    }
 
     public void setAttempt(int number) {
         attempts[numberOfAttempt] = number;
