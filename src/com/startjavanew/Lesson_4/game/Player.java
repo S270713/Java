@@ -13,15 +13,17 @@ public class Player {
     }
 
     public int[] getAttempts() {
-        return Arrays.copyOf(attempts, numberOfAttempt + 1);
+        return Arrays.copyOf(attempts, numberOfAttempt);
     }
+
     //возвращает последнее введенное игроком число:
     public int getAttempt() {
-        return attempts[numberOfAttempt];
+        return attempts[numberOfAttempt - 1];
     }
 
     public void setAttempt(int number) {
         attempts[numberOfAttempt] = number;
+        setNumberOfAttempt((getNumberOfAttempt())+1);
     }
 
     public String getName() {
@@ -38,5 +40,10 @@ public class Player {
 
     public void setNumberOfAttempt(int numberOfAttempt) {
         this.numberOfAttempt = numberOfAttempt;
+    }
+
+    //очистка заполненных вариантов
+    public void clearNumbers(Player player) {
+        Arrays.fill(player.attempts, 0, numberOfAttempt,0);
     }
 }
