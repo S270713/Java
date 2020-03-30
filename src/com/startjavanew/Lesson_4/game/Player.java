@@ -23,7 +23,7 @@ public class Player {
 
     public void setAttempt(int number) {
         attempts[numberOfAttempt] = number;
-        setNumberOfAttempt((getNumberOfAttempt())+1);
+        numberOfAttempt ++;
     }
 
     public String getName() {
@@ -44,6 +44,6 @@ public class Player {
 
     //очистка заполненных вариантов
     public void clearNumbers(Player player) {
-        Arrays.fill(player.attempts, 0, numberOfAttempt,0);
+        Arrays.fill(player.attempts, 0, numberOfAttempt, 0);
     }
 }
