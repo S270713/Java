@@ -1,14 +1,14 @@
 package com.startjavanew.Lesson_4.game;
+//Класс описания игроков-объектов.
 
 import java.util.Arrays;
 
-public class Player {
-
-    private int[] attempts = new int[10];//поле для хранения введенных чисел
-    private String name;
+public class Players {
+    private int[] attempts = new int[10];//поле-массив для хранения введенных чисел
+    private String name;// имя игроков
     private int numberOfAttempt;//номер варианта(попытки)
 
-    public Player(String name) {
+    public Players(String name) {
         this.name = name;
     }
 
@@ -23,7 +23,7 @@ public class Player {
 
     public void setAttempt(int number) {
         attempts[numberOfAttempt] = number;
-        numberOfAttempt ++;
+        numberOfAttempt++;
     }
 
     public String getName() {
@@ -43,7 +43,7 @@ public class Player {
     }
 
     //очистка заполненных вариантов
-    public void clearNumbers(Player player) {
-        Arrays.fill(player.attempts, 0, numberOfAttempt, 0);
+    public void clearNumbers(Players players) {
+        Arrays.fill(players.attempts, 0, numberOfAttempt, 0);
     }
 }
