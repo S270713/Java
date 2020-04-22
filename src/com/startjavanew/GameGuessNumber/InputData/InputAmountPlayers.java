@@ -1,7 +1,7 @@
-package com.startjavanew.GameGuessNumber.DataInput;
+package com.startjavanew.GameGuessNumber.InputData;
 //Определяем количество участвующих в игре игроков.
 
-import com.startjavanew.GameGuessNumber.Messages;
+import com.startjavanew.GameGuessNumber.OtherTools.Messages;
 
 import java.io.BufferedReader;
 import java.io.IOException;

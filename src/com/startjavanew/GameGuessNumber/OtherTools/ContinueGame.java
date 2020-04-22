@@ -1,4 +1,4 @@
-package com.startjavanew.GameGuessNumber;
+package com.startjavanew.GameGuessNumber.OtherTools;
 //Класс для продолжения игры, либо прекращения.
 
 import java.util.Scanner;
@@ -7,7 +7,7 @@ public class ContinueGame {
     String replayGame = null;
     Scanner input = new Scanner(System.in);
 
-    String questionReplay() {
+    public String questionReplay() {
         do {
             System.out.println("\nВыберите ответ из предлагаемых вариантов.");
             System.out.print("Хотите продолжить? [да / нет]: ");

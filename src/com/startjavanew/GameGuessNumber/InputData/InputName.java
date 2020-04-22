@@ -1,4 +1,4 @@
-package com.startjavanew.GameGuessNumber.DataInput;
+package com.startjavanew.GameGuessNumber.InputData;
 // Класс ввода имени игроков.
 
 import java.util.Scanner;

@@ -1,6 +1,9 @@
 package com.startjavanew.GameGuessNumber;
-// Игра "Угадай число".
-// Класс запуска игры.
+// Игра "Угадай число". Класс запуска игры.
+
+import com.startjavanew.GameGuessNumber.OtherTools.ContinueGame;
+import com.startjavanew.GameGuessNumber.OtherTools.Messages;
+import com.startjavanew.GameGuessNumber.Procedures.GameMain;
 
 import java.io.IOException;
 

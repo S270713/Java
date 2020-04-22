@@ -1,23 +1,26 @@
-package com.startjavanew.GameGuessNumber;
+package com.startjavanew.GameGuessNumber.OtherTools;
 //Сообщения для игроков.
 
 public class Messages {
     //GameStart сообщения.
-    static void messageGameBegin() {
-        System.out.println("Игра 'Угадай число.' \nПравила игры: ");
+    public static void messageGameBegin() {
+        System.out.println("Игра 'Угадай число.'");
     }
-    static void messageParameteresDefault() {
+
+    public static void messageParameteresDefault() {
         System.out.println("Базовые параметры: Кол-во игроков - 2, Кол-во попыток у каждого - 10. \nВыберите: \nДа - играть с данными параметрами, Нет - задать араметры самостоятельно.");
     }
-    static void messageGameOver() {
+
+    public static void messageGameOver() {
         System.out.println("Игра завершена.");
     }
 
     //Game Main сообщения.
-    static void messageSecretNumber(int secretNumber) {
-        System.out.println("Загаданное число: " + secretNumber);
+    public static void messageSecretNumber(int secretNumber) {
+        System.out.println("\nЗагаданное число: " + secretNumber);
     }
-    static void message10Attempts() {
+
+    public static void message10Attempts() {
         System.out.println("\nУ вас 10 попыток.");
     }
 
@@ -25,12 +28,13 @@ public class Messages {
     public static void messageAmountPlayers1() {
         System.out.println("\nВведите количество игроков: ");
     }
+
     public static void messageAmountPlayers2(int amount) {
         System.out.println("Количество игроков в игре: " + amount);
     }
 
     //PrintAllAttempts сообщения.
-    static void messageAllAttempts() {
+    public static void messageAllAttempts() {
         System.out.println("\nВсе названные варианты игроков: ");
     }
 }

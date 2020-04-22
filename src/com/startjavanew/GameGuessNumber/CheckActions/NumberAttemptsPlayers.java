@@ -1,4 +1,4 @@
-package com.startjavanew.GameGuessNumber;
+package com.startjavanew.GameGuessNumber.CheckActions;
 //Проверка на предмет кол-ва оставшихся попыток.
 
 //public class NumberAttemptsPlayers {
