@@ -9,21 +9,31 @@ import java.io.IOException;
 
 public class BeforeGame {
     public void beforeGame() throws IOException {
-        SecretNumber secretNumber = new SecretNumber();
-        InputAmountPlayers.amount();// Блок ввода количества игроков.
 
-        InputName namePlayer = new InputName();//Блок ввода имени игроков.
+        InputAmountPlayers.amount();// Блок ввода количества игроков в игре.
+
+        InputName inputName = new InputName();//Блок ввода имени игроков.
         for (int i = 1; i <= InputAmountPlayers.amountPlayers; i++) {
-            GameMain.player.add(new Players(namePlayer.inputName(i)));
+            GameMain.player.add(new Players(inputName.inputName(i)));
         }
 
-        //Вывод имен всех игроков, участвующих в иигре.
-        NamesPrint namesPrint = new NamesPrint();
-        namesPrint.addNames();
+        InputNumberAttempts inputNumberAttempts = new InputNumberAttempts();;//Блок ввода количества попыток у каждого игрока.
+        inputNumberAttempts.amountNumberAttempts();
 
-        //Компьютер загадывает секретное число.
+        NamesPrint namesPrint = new NamesPrint();//Вывод имен всех игроков, участвующих в игре.
+        namesPrint.addNames();
+        SecretNumber secretNumber = new SecretNumber();//Блок - Компьютер загадывает секретное число.
         secretNumber.setSecretNumber(((int) (101 * Math.random())));
         Messages.messageSecretNumber(secretNumber.getSecretNumber());
+
+        System.out.println("Выявление ошибки 1. Начало. inputNumberAttempts.getNumberAttempts() = ");
+        System.out.println(inputNumberAttempts.getNumberAttempts());
+        System.out.println("Выявление ошибки 1. Конец.");
+
         Messages.message10Attempts();
+
+        System.out.println("Выявление ошибки 3. Начало. inputNumberAttempts.getNumberAttempts() = ");
+        System.out.println(inputNumberAttempts.getNumberAttempts());
+        System.out.println("Выявление ошибки 3. Конец.");
     }
 }

@@ -2,8 +2,6 @@ package com.startjavanew.Lesson_4.game;
 // Игра "Угадай число".
 // Класс запуска игры.
 
-//======================== ПОКА ОТКЛЮЧЕНО.======================================
-
 //public class GameStart {
 //    public static void main(String[] args) {
 //        GameMain game = new GameMain();

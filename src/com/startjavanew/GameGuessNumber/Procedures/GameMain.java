@@ -1,6 +1,7 @@
 package com.startjavanew.GameGuessNumber.Procedures;
 //Основной класс игры.
 
+import com.startjavanew.GameGuessNumber.CheckActions.CheckNumberAllAttempts;
 import com.startjavanew.GameGuessNumber.CheckActions.CheckNumbers;
 import com.startjavanew.GameGuessNumber.InputData.*;
 import com.startjavanew.GameGuessNumber.ObjectClasses.*;
@@ -15,18 +16,24 @@ public class GameMain {
         BeforeGame beforeGame = new BeforeGame();//Процедуры да начала игры.
         beforeGame.beforeGame();
         Players actualPlayer = null;
-        victory:
-        for (int j = 1; j <= 10; j++) { //Цикл - кол-во попыток у каждого игрока.//  ПЕРЕДЕЛАТЬ на while
+
+        gameOver:
+        do {// Цикл - кол-во попыток.
             for (int i = 0; i < InputAmountPlayers.amountPlayers; i++) {  //Цикл - кол-во игроков.
                 actualPlayer = GameMain.player.get(i);//чередование игроков
-                InputNumber enter = new InputNumber();//Ввод числа пользователем.
-                enter.enterNumber(actualPlayer);
-                CheckNumbers check = new CheckNumbers();// Сверка названного варианта с загаданным числом.
-                if (check.compareNumbers(actualPlayer)) {
-                    break victory;//Число угадано.break-выход в случае, если любой игрок угадал число.
+                InputNumber inputNumber = new InputNumber();//Ввод числа пользователем.
+                inputNumber.enterNumber(actualPlayer);
+                CheckNumbers checkNumbers = new CheckNumbers();// Сверка названного варианта с загаданным числом.
+                if (checkNumbers.compareNumbers(actualPlayer)) {
+                    break gameOver;//Конец игры, т.к. игрок угадал число.
+                }
+                CheckNumberAllAttempts checkNumberAllAttempts = new CheckNumberAllAttempts();//Проверка, что остались попытки.
+                if (checkNumberAllAttempts.checkAllAttemptsPlayers(actualPlayer, i)) {
+                    break gameOver;//Конец игры, т.е. у всех игроков закончились попытки.
                 }
             }
-        }
+        } while(true);
+
         AfterGame afterGame = new AfterGame();//Процедуры после окончания игры.
         afterGame.afterGame(actualPlayer);
     }

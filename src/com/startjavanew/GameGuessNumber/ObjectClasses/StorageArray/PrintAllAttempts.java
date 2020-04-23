@@ -15,7 +15,7 @@ public class PrintAllAttempts {
         Messages.messageAllAttempts();
         for (int i = 0; i < InputAmountPlayers.amountPlayers; i++) {
             System.out.print(GameMain.player.get(i).getName() + " назвал варианты: ");
-            System.out.println(Arrays.toString(GameMain.player.get(i).storageArray.getAttempts(actualPlayer)));
+            System.out.println(Arrays.toString(GameMain.player.get(i).storageArrayAttempts.getAttempts(actualPlayer)));
         }
     }
 }

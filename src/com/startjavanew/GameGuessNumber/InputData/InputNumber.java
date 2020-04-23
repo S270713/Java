@@ -10,6 +10,6 @@ public class InputNumber {
 
     public void enterNumber(Players actualPlayer) {// метод ввода чисел
         System.out.println("\nПросим вас ввести число, " + actualPlayer.getName());
-        actualPlayer.storageArray.setAttempt(actualPlayer, input.nextInt());
+        actualPlayer.storageArrayAttempts.setAttempt(actualPlayer, input.nextInt());
     }
 }

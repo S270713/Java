@@ -7,7 +7,7 @@ import com.startjavanew.GameGuessNumber.Procedures.GameMain;
 public class ClearAttempts {
     public void clear() {
         for (int i = 0; i < InputAmountPlayers.amountPlayers; i++) {
-            GameMain.player.get(i).storageArray.clearNumbers(GameMain.player.get(i));
+            GameMain.player.get(i).storageArrayAttempts.clearNumbers(GameMain.player.get(i));
         }
     }
 }

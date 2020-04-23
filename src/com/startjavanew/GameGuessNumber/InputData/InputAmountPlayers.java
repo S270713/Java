@@ -10,12 +10,11 @@ import java.io.InputStreamReader;
 public class InputAmountPlayers {
     public static int amountPlayers;//кол-во игроков.
 
-    public static int amount() throws IOException {
+    public static void amount() throws IOException {
         Messages.messageAmountPlayers1();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String amountPlayersText = reader.readLine();
         amountPlayers = Integer.parseInt(amountPlayersText.trim());
         Messages.messageAmountPlayers2(amountPlayers);
-        return amountPlayers;
     }
 }

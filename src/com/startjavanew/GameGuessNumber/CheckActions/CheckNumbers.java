@@ -1,5 +1,5 @@
 package com.startjavanew.GameGuessNumber.CheckActions;
-// Класс проверки чисел.
+// Класс сверки названных чисел и загаданного числа.
 
 import com.startjavanew.GameGuessNumber.ObjectClasses.Players;
 import com.startjavanew.GameGuessNumber.ObjectClasses.SecretNumber;
@@ -7,11 +7,10 @@ import com.startjavanew.GameGuessNumber.ObjectClasses.SecretNumber;
 public class CheckNumbers {
 
     public boolean compareNumbers(Players actualPlayer) {
-        int number = actualPlayer.storageArray.getAttempt(actualPlayer);
-        if (number == SecretNumber.getSecretNumber()) {
-            System.out.println("Игрок " + actualPlayer.getName() + " угадал число " + number + " с " + (actualPlayer.numberOfAttempt.getNumberOfAttempt()) + " попытки.");
+        if (actualPlayer.storageArrayAttempts.getAttempt(actualPlayer) == SecretNumber.getSecretNumber()) {
+            System.out.println("Игрок " + actualPlayer.getName() + " угадал число " + actualPlayer.storageArrayAttempts.getAttempt(actualPlayer) + " с " + (actualPlayer.countAttemptsPlayers.getcountAttempts()) + " попытки.");
             return true;
-        } else if (SecretNumber.getSecretNumber() > number) {
+        } else if (SecretNumber.getSecretNumber() > actualPlayer.storageArrayAttempts.getAttempt(actualPlayer)) {
             System.out.println(actualPlayer.getName() + ", загаданное число больше вашего варианта.");
         } else {
             System.out.println(actualPlayer.getName() + ", загаданное число меньше вашего варианта.");

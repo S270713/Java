@@ -14,8 +14,8 @@ public class GameStart {
 
         Messages.messageGameBegin();
         do {
-            game.start();
-        } while (replay.questionReplay().equals("да"));//В классе Continue запрос о повторе игры.
+            game.start();//Запуск игры.
+        } while (replay.questionReplay().equals("да"));//В классе ContinueGame запрос о повторе игры.
         Messages.messageGameOver();
     }
 }

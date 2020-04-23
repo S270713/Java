@@ -3,8 +3,8 @@ package com.startjavanew.GameGuessNumber.ObjectClasses;
 
 public class Players {
 
-    public NumberOfAttempt numberOfAttempt = new NumberOfAttempt();
-    public StorageArrayAttempts storageArray = new StorageArrayAttempts();
+    public CountAttemptsPlayers countAttemptsPlayers = new CountAttemptsPlayers();
+    public StorageArrayAttempts storageArrayAttempts = new StorageArrayAttempts();
 
     private String name;// имя игроков
 

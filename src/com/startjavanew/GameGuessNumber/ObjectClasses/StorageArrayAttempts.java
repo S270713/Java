@@ -1,30 +1,27 @@
 package com.startjavanew.GameGuessNumber.ObjectClasses;
-
-//Массив для хранения введенных чисел.
+//Массив для хранения введенных чисел. Также идет изменения счетчика-индекса по этому массиву.
 
 import java.util.Arrays;
 
 public class StorageArrayAttempts {
 
-    private int[] attempts = new int[10];
-    NumberOfAttempt numberOfAttempt = new NumberOfAttempt();
+    private int[] attempts = new int[50];//потом константу замениить на кол-во введенных попыток.
+    CountAttemptsPlayers countAttemptsPlayers = new CountAttemptsPlayers();
 
-    public int[] getAttempts(Players actualPlayer) {
-        return Arrays.copyOf(attempts, actualPlayer.numberOfAttempt.getNumberOfAttempt());
+    public int[] getAttempts(Players actualPlayer) {//выводит массив с названными вариантами игрока.
+        return Arrays.copyOf(attempts, actualPlayer.countAttemptsPlayers.getcountAttempts());
     }
 
-    //возвращает последнее введенное игроком число из массива:
-    public int getAttempt(Players actualPlayer) {
-        return attempts[actualPlayer.numberOfAttempt.getNumberOfAttempt() - 1];
+    public int getAttempt(Players actualPlayer) {//возвращает последнее введенное игроком число из массива:
+        return attempts[actualPlayer.countAttemptsPlayers.getcountAttempts() - 1];
     }
 
     public void setAttempt(Players actualPlayer, int number) {
-        attempts[actualPlayer.numberOfAttempt.getNumberOfAttempt()] = number;
-        actualPlayer.numberOfAttempt.setNumberOfAttempt(actualPlayer.numberOfAttempt.getNumberOfAttempt() + 1);
+        actualPlayer.countAttemptsPlayers.setcountAttempts(actualPlayer.countAttemptsPlayers.getcountAttempts() + 1);//Счетчик попыток.
+        attempts[actualPlayer.countAttemptsPlayers.getcountAttempts()] = number;//Добавляет названное число в массив-накопитель.
     }
 
-    //очистка заполненных вариантов
-    public void clearNumbers(Players players) {
-        Arrays.fill(attempts, 0, numberOfAttempt.getNumberOfAttempt(), 0);
+    public void clearNumbers(Players players) {//очистка заполненных вариантов
+        Arrays.fill(attempts, 0, countAttemptsPlayers.getcountAttempts(), 0);
     }
 }
