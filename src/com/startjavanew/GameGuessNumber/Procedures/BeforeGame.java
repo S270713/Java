@@ -25,15 +25,6 @@ public class BeforeGame {
         SecretNumber secretNumber = new SecretNumber();//Блок - Компьютер загадывает секретное число.
         secretNumber.setSecretNumber(((int) (101 * Math.random())));
         Messages.messageSecretNumber(secretNumber.getSecretNumber());
-
-        System.out.println("Выявление ошибки 1. Начало. inputNumberAttempts.getNumberAttempts() = ");
-        System.out.println(inputNumberAttempts.getNumberAttempts());
-        System.out.println("Выявление ошибки 1. Конец.");
-
-        Messages.message10Attempts();
-
-        System.out.println("Выявление ошибки 3. Начало. inputNumberAttempts.getNumberAttempts() = ");
-        System.out.println(inputNumberAttempts.getNumberAttempts());
-        System.out.println("Выявление ошибки 3. Конец.");
+        Messages.message10Attempts(inputNumberAttempts.getNumberAttempts());
     }
 }

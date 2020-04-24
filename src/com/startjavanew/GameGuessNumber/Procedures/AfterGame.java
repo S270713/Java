@@ -12,7 +12,9 @@ public class AfterGame {
         PrintAllAttempts printAllAttempts = new PrintAllAttempts();//Вывод всех названных игроками вариантов.
         printAllAttempts.printAttempts(actualPlayer);
 
-        //Вывод теоретической таблицы старых рекордов.
+        PrintOldRecords printOldRecords = new PrintOldRecords();//Вывод теоретической таблицы старых рекордов.
+        printOldRecords.tableOldRecordsForm();
+        printOldRecords.listOldRecordsPlayers();
 
         ClearAttempts clearAttempts = new ClearAttempts();//Очистка заполненных вариантов
         clearAttempts.clear();

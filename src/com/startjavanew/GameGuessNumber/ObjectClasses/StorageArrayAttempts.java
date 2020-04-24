@@ -17,8 +17,8 @@ public class StorageArrayAttempts {
     }
 
     public void setAttempt(Players actualPlayer, int number) {
-        actualPlayer.countAttemptsPlayers.setcountAttempts(actualPlayer.countAttemptsPlayers.getcountAttempts() + 1);//Счетчик попыток.
         attempts[actualPlayer.countAttemptsPlayers.getcountAttempts()] = number;//Добавляет названное число в массив-накопитель.
+        actualPlayer.countAttemptsPlayers.setcountAttempts(actualPlayer.countAttemptsPlayers.getcountAttempts() + 1);//Счетчик попыток.
     }
 
     public void clearNumbers(Players players) {//очистка заполненных вариантов

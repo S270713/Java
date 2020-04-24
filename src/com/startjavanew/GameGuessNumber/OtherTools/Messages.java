@@ -4,39 +4,32 @@ package com.startjavanew.GameGuessNumber.OtherTools;
 import com.startjavanew.GameGuessNumber.InputData.*;
 
 public class Messages {
-
     //GameStart сообщения.
-    public static void messageGameBegin() {
+    final public static void messageGameBegin() {
         System.out.println("Игра 'Угадай число.'");
     }
 
-    public static void messageParameteresDefault() { System.out.println("Базовые параметры: Кол-во игроков - 2, Кол-во попыток у каждого - 10. \nВыберите: \nДа - играть с данными параметрами, Нет - задать араметры самостоятельно."); }
+    final public static void messageParameteresDefault() { System.out.println("Базовые параметры: Кол-во игроков - 2, Кол-во попыток у каждого - 10. \nВыберите: \nДа - играть с данными параметрами, Нет - задать араметры самостоятельно."); }
     public static void messageGameOver() {
         System.out.println("Игра завершена.");
     }
 
     //BeforeGame сообщения.
-    public static void messageSecretNumber(int i) { System.out.println("\nЗагаданное число: " + i); }
-    public static void message10Attempts() {
-        InputNumberAttempts inputNumberAttempts = new InputNumberAttempts();
-
-        System.out.println("Выявление ошибки 2. Начало. inputNumberAttempts.getNumberAttempts() = ");
-        System.out.println(inputNumberAttempts.getNumberAttempts());
-        System.out.println("Выявление ошибки 2. Конец.");
-
-        System.out.println("\nУ вас " + inputNumberAttempts.getNumberAttempts() + " попыток.");
+    public static void messageSecretNumber(int buffer) { System.out.println("\nЗагаданное число: " + buffer); }
+    public static void message10Attempts(int buffer) {
+        System.out.println("\nУ вас " + buffer + " попыток.");
     }
 
     //InputNumberAttempts.
     public static void messageNumberAttempts1() { System.out.println("\nВведите количество попыток у каждого игрока: "); }
-    public static void messageNumberAttempts2(int i) { System.out.println("Количество попыток у каждого игрока: " + i); }
+    public static void messageNumberAttempts2(int buffer) { System.out.println("Количество попыток у каждого игрока: " + buffer); }
 
     //InputAmountPlayers сообщеня.
     public static void messageAmountPlayers1() {
         System.out.println("\nВведите количество игроков: ");
     }
-    public static void messageAmountPlayers2(int i) {
-        System.out.println("Количество игроков в игре: " + i);
+    public static void messageAmountPlayers2(int buffer) {
+        System.out.println("Количество игроков в игре: " + buffer);
     }
 
     //PrintAllAttempts сообщения.
