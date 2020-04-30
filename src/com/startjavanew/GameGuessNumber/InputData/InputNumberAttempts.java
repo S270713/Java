@@ -15,10 +15,18 @@ public class InputNumberAttempts {
         return numberAttempts;
     }
 
-    public void amountNumberAttempts() throws IOException {
+    public void amountNumberAttempts() {
         Messages.messageNumberAttempts1();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String amountNumberAttemptsText = reader.readLine();
+
+        String amountNumberAttemptsText = null;
+        try {
+            amountNumberAttemptsText = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+        }
+
         numberAttempts = Integer.parseInt(amountNumberAttemptsText.trim());
         Messages.messageNumberAttempts2(numberAttempts);
     }
