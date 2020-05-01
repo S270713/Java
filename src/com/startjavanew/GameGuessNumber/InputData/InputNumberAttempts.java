@@ -2,6 +2,7 @@ package com.startjavanew.GameGuessNumber.InputData;
 //Класс объекта - общее количество попыток игроков.
 
 import com.startjavanew.GameGuessNumber.OtherTools.Messages;
+import com.startjavanew.GameGuessNumber.Procedures.GameMain;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,6 +29,10 @@ public class InputNumberAttempts {
         }
 
         numberAttempts = Integer.parseInt(amountNumberAttemptsText.trim());
+        //цикл . каждому игроку поставить попытки.
+        for (int i = 0; i < InputAmountPlayers.amountPlayers; i++) {
+            GameMain.player.get(i).inputNumberAttempts.numberAttempts = numberAttempts;
+        }
         Messages.messageNumberAttempts2(numberAttempts);
     }
 }
