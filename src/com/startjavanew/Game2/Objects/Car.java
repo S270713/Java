@@ -3,14 +3,35 @@ package com.startjavanew.Game2.Objects;
 //Используем interface Comparator<T> с методом compare(Object obj1, Object obj2).
 
 public class Car implements Comparable<Car> {
-    public int numberSeats;
-    public String modelName;
-    public int motorPower;
+    private int numberSeats;
+    private String modelName;
+    private int motorPower;
 
     public Car(String modelName, int motorPower, int numberSeats) {
         this.modelName = modelName;
         this.motorPower = motorPower;
         this.numberSeats = numberSeats;
+    }
+
+    public int getNumberSeats() {
+        return numberSeats;
+    }
+    public void setNumberSeats(int numberSeats) {
+        this.numberSeats = numberSeats;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public int getMotorPower() {
+        return motorPower;
+    }
+    public void setMotorPower(int motorPower) {
+        this.motorPower = motorPower;
     }
 
     @Override
