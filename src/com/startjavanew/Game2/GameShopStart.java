@@ -1,6 +1,7 @@
 package com.startjavanew.Game2;
 //Игра - поездка по магазинам.
 
+import com.startjavanew.Game2.Choose.ChooseMain;
 import com.startjavanew.Game2.InputData.PropertiesCars;
 import com.startjavanew.Game2.InputData.PropertiesShops;
 
@@ -12,5 +13,9 @@ public class GameShopStart {
 
         PropertiesCars infoCar = new PropertiesCars();
         infoCar.allCars();
+
+        ChooseMain chooseMain = new ChooseMain();//выбор магазинов, машины.
+        chooseMain.choose();
+
     }
 }
