@@ -1,21 +1,13 @@
 package com.startjavanew.Game2;
 //Игра - поездка по магазинам.
 
-import com.startjavanew.Game2.Choose.ChooseMain;
-import com.startjavanew.Game2.InputData.PropertiesCars;
-import com.startjavanew.Game2.InputData.PropertiesShops;
+import java.io.IOException;
 
 public class GameShopStart {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        PropertiesShops infoShop = new PropertiesShops();
-        infoShop.allShops();
-
-        PropertiesCars infoCar = new PropertiesCars();
-        infoCar.allCars();
-
-        ChooseMain chooseMain = new ChooseMain();//выбор магазинов, машины.
-        chooseMain.choose();
+        StepByStep stepByStep = new StepByStep();
+        stepByStep.doSteps();
 
     }
 }
