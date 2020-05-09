@@ -1,7 +1,9 @@
 package com.Java.Game2;
 //Игра - поездка по магазинам.
-//Rename 2 Module Java
+
 import java.io.IOException;
+
+//Commit: @Overload; super/this.
 
 public class GameShopStart {
     public static void main(String[] args) throws IOException {
