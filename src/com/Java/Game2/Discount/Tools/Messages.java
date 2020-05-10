@@ -10,4 +10,9 @@ public class Messages {
         System.out.println("Максимальное кол-во товаров - 3 единицы.");
         System.out.println("Введите через запятые коды товаров в формате: 1,1,2");
     }
+
+    //Сообщение для класса MainDiscount - вывод итоговой суммы.
+    public void summaEnd(double summa) {
+        System.out.println("Итоговая стоимость вашей покупки товаров со скидкой составила: " + summa);
+    }
 }

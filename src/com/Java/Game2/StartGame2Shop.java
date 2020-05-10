@@ -3,9 +3,7 @@ package com.Java.Game2;
 
 import java.io.IOException;
 
-//Commit: @Overload; super/this.
-
-public class GameShopStart {
+public class StartGame2Shop {
     public static void main(String[] args) throws IOException {
 
         StepByStep stepByStep = new StepByStep();
