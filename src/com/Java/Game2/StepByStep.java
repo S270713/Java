@@ -1,5 +1,6 @@
 package com.Java.Game2;
 
+import com.Java.Game2.CashReport.StartCashReport;
 import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
 import com.Java.Game2.Discount.StartDiscount;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 public class StepByStep {
 
-    void doSteps() throws IOException {
+    void doSteps() throws IOException, ClassNotFoundException {
         PropertiesShops infoShop = new PropertiesShops();
         infoShop.allShops();
 
@@ -28,11 +29,15 @@ public class StepByStep {
         StartDiscount startDiscount = new StartDiscount();//Выбор товара со скидкой.
         startDiscount.startDiscount();
 
+        StartWalkShopAlpha startWalkShopAlpha = new StartWalkShopAlpha();//Во время движения по магазину.
+        startWalkShopAlpha.walkShopAlpha();//Вложенные классы(внутренние и статическиие вложенные)
+
         Cashbox2 cashbox2 = new Cashbox2();
         System.out.println("Вы выбрали вторую кассу.");
         cashbox2.chooseCashbox();
 
-        StartWalkShopAlpha startWalkShopAlpha = new StartWalkShopAlpha();//Во время движения по магазину.
-        startWalkShopAlpha.walkShopAlpha();//Вложенные классы(внутренние и статическиие вложенные)
+        StartCashReport startCashReport = new StartCashReport();//сериализация/десериализация
+        startCashReport.cashReport();//Отчет кассы.
+
     }
 }
