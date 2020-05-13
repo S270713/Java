@@ -7,6 +7,7 @@ import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
 import com.Java.Game2.ShoppingList.StartShoppingList;
+import com.Java.Game2.TwoQueue.StartTwoQueue;
 import com.Java.Game2.WalkShop.StartWalkShopAlpha;
 
 import java.io.IOException;
@@ -36,8 +37,11 @@ public class StepByStep {
         System.out.println("Вы выбрали вторую кассу.");
         cashbox2.chooseCashbox();
 
-        StartCashReport startCashReport = new StartCashReport();//сериализация/десериализация
+        StartCashReport startCashReport = new StartCashReport();//сериализация/десериализация.
         startCashReport.cashReport();//Отчет кассы.
+
+        StartTwoQueue startTwoQueue = new StartTwoQueue();//Многопоточность.
+        startTwoQueue.startTwoQueue();//Одна касса обслуживает две очереди в пропорции 2:1.
 
     }
 }
