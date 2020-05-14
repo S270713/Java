@@ -6,15 +6,14 @@ import com.Java.Game2.Choose.ChooseMain;
 import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
+import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
 import com.Java.Game2.ShoppingList.StartShoppingList;
 import com.Java.Game2.TwoQueue.StartTwoQueue;
 import com.Java.Game2.WalkShop.StartWalkShopAlpha;
 
-import java.io.IOException;
-
 public class StepByStep {
 
-    void doSteps() throws IOException, ClassNotFoundException {
+    void doSteps() throws Exception {
         PropertiesShops infoShop = new PropertiesShops();
         infoShop.allShops();
 
@@ -42,6 +41,9 @@ public class StepByStep {
 
         StartTwoQueue startTwoQueue = new StartTwoQueue();//Многопоточность.
         startTwoQueue.startTwoQueue();//Одна касса обслуживает две очереди в пропорции 2:1.
+
+        StartMailPresent startMailPresent = new StartMailPresent();//Try-With-Resources.
+        startMailPresent.startMailPresent();//Карту клиента отправляем по почте и поздравляем.
 
     }
 }
