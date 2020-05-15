@@ -4,6 +4,7 @@ import com.Java.Game2.CashReport.StartCashReport;
 import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
 import com.Java.Game2.Discount.StartDiscount;
+import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
 import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
@@ -44,6 +45,9 @@ public class StepByStep {
 
         StartMailPresent startMailPresent = new StartMailPresent();//Try-With-Resources.
         startMailPresent.startMailPresent();//Карту клиента отправляем по почте и поздравляем.
+
+        StartDiscountDay startDiscountDay = new StartDiscountDay();//enum-class, combinedOperations.
+        startDiscountDay.startDiscountDay();//Выбираем день скидки, менеджера и получаем рассчитанную скидку.
 
     }
 }
