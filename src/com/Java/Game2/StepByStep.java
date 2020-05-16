@@ -3,6 +3,7 @@ package com.Java.Game2;
 import com.Java.Game2.CashReport.StartCashReport;
 import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
+import com.Java.Game2.ConfirmBank_Generics.StartConfirmBank;
 import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
 import com.Java.Game2.InputData.PropertiesCars;
@@ -48,6 +49,9 @@ public class StepByStep {
 
         StartDiscountDay startDiscountDay = new StartDiscountDay();//enum-class, combinedOperations.
         startDiscountDay.startDiscountDay();//Выбираем день скидки, менеджера и получаем рассчитанную скидку.
+
+        StartConfirmBank startConfirmBank = new StartConfirmBank();// Generics
+        startConfirmBank.startConfirmBank();//Подтверждение от банка по оплате.
 
     }
 }
