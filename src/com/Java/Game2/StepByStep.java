@@ -1,5 +1,6 @@
 package com.Java.Game2;
 
+import com.Java.Game2.BirthDay_DateCalendar.Start_TimeDateCalendar;
 import com.Java.Game2.CashReport.StartCashReport;
 import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
@@ -52,6 +53,9 @@ public class StepByStep {
 
         StartConfirmBank startConfirmBank = new StartConfirmBank();// Generics
         startConfirmBank.startConfirmBank();//Подтверждение от банка по оплате.
+
+        Start_TimeDateCalendar start_timeDateCalendar = new Start_TimeDateCalendar();//Date, Calendar, JodaTimeLibrary
+        start_timeDateCalendar.start_TimeDateCalendar();//Рассылка поздравлений с ДР.
 
     }
 }
