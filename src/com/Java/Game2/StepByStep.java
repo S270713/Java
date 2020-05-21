@@ -10,6 +10,7 @@ import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
 import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
+import com.Java.Game2.Present_Constructor.StartPresent_Constructor;
 import com.Java.Game2.ShoppingList.StartShoppingList;
 import com.Java.Game2.TwoQueue.StartTwoQueue;
 import com.Java.Game2.WalkShop.StartWalkShopAlpha;
@@ -57,5 +58,7 @@ public class StepByStep {
         Start_TimeDateCalendar start_timeDateCalendar = new Start_TimeDateCalendar();//Date, Calendar, JodaTimeLibrary
         start_timeDateCalendar.start_TimeDateCalendar();//Рассылка поздравлений с ДР.
 
+        StartPresent_Constructor startPresent = new StartPresent_Constructor();//Конструкторы.
+        startPresent.StartPresent();//Покупка подарков.
     }
 }
