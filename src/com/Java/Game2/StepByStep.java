@@ -4,6 +4,7 @@ import com.Java.Game2.BirthDay_DateCalendar.Start_TimeDateCalendar;
 import com.Java.Game2.CashReport.StartCashReport;
 import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
+import com.Java.Game2.Computer_equals_hashcode.StartComputer;
 import com.Java.Game2.ConfirmBank_Generics.StartConfirmBank;
 import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
@@ -64,6 +65,9 @@ public class StepByStep {
 
         StartLottery startLottery = new StartLottery();//Инициализация.
         startLottery.startLottery();//Лотерея.
+
+        StartComputer startComputer = new StartComputer();//equals_hashcode
+        startComputer.startComputer();//техническая информация.
 
     }
 }
