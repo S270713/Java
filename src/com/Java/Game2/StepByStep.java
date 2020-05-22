@@ -9,6 +9,7 @@ import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
+import com.Java.Game2.Lottery_Initialization.StartLottery;
 import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
 import com.Java.Game2.Present_Constructor.StartPresent_Constructor;
 import com.Java.Game2.ShoppingList.StartShoppingList;
@@ -60,5 +61,9 @@ public class StepByStep {
 
         StartPresent_Constructor startPresent = new StartPresent_Constructor();//Конструкторы.
         startPresent.StartPresent();//Покупка подарков.
+
+        StartLottery startLottery = new StartLottery();//Инициализация.
+        startLottery.startLottery();//Лотерея.
+
     }
 }
