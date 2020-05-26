@@ -8,6 +8,7 @@ import com.Java.Game2.Computer_equals_hashcode.StartComputer;
 import com.Java.Game2.ConfirmBank_Generics.StartConfirmBank;
 import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
+import com.Java.Game2.FindProduct_RegEx.StartFindProduct;
 import com.Java.Game2.InputData.PropertiesCars;
 import com.Java.Game2.InputData.PropertiesShops;
 import com.Java.Game2.Lottery_Initialization.StartLottery;
@@ -68,6 +69,9 @@ public class StepByStep {
 
         StartComputer startComputer = new StartComputer();//equals_hashcode
         startComputer.startComputer();//техническая информация.
+
+        StartFindProduct startFindProduct = new StartFindProduct();//RegEx
+        startFindProduct.startFindProduct();//Поиск роботом автомобиля на стоянке.
 
     }
 }
