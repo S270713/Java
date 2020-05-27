@@ -14,6 +14,7 @@ import com.Java.Game2.InputData.PropertiesShops;
 import com.Java.Game2.Lottery_Initialization.StartLottery;
 import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
 import com.Java.Game2.Present_Constructor.StartPresent_Constructor;
+import com.Java.Game2.Queue_Deque.StartQueues;
 import com.Java.Game2.ShoppingList.StartShoppingList;
 import com.Java.Game2.TwoQueue.StartTwoQueue;
 import com.Java.Game2.WalkShop.StartWalkShopAlpha;
@@ -72,6 +73,9 @@ public class StepByStep {
 
         StartFindProduct startFindProduct = new StartFindProduct();//RegEx
         startFindProduct.startFindProduct();//Поиск роботом автомобиля на стоянке.
+
+        StartQueues startQueues = new StartQueues();//Queue/Deque
+        startQueues.queueDeque();//Обзор очередей у касс.
 
     }
 }
