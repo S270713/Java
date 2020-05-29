@@ -6,6 +6,7 @@ import com.Java.Game2.Cashbox.Cashbox2;
 import com.Java.Game2.Choose.ChooseMain;
 import com.Java.Game2.Computer_equals_hashcode.StartComputer;
 import com.Java.Game2.ConfirmBank_Generics.StartConfirmBank;
+import com.Java.Game2.DataBaseClone.StartDatabaseClone;
 import com.Java.Game2.Discount.StartDiscount;
 import com.Java.Game2.DiscountDay_enum.StartDiscountDay;
 import com.Java.Game2.FindProduct_RegEx.StartFindProduct;
@@ -76,6 +77,9 @@ public class StepByStep {
 
         StartQueues startQueues = new StartQueues();//Queue/Deque
         startQueues.queueDeque();//Обзор очередей у касс.
+
+        StartDatabaseClone startDatabaseClone = new StartDatabaseClone();// clone()
+        startDatabaseClone.startDatabaseClone();//Техническая работа с БД.
 
     }
 }
