@@ -1,6 +1,7 @@
-package com.Java.Threads.Threads_Game.Builders;
+package com.Java.Threads.Threads_Game_Exchange.Builders;
 
-import com.Java.Threads.Threads_Game.Exchange.Exchange;
+import com.Java.Threads.Threads_Game_Exchange.Exchange.Exchange;
+import com.Java.Threads.Threads_Game_Exchange.Exchange.Report;
 
 //Класс - Застройщик2.
 public class Builders2 implements Runnable {
@@ -14,6 +15,6 @@ public class Builders2 implements Runnable {
         for (int i = 1; i < 11; i++) {
             exchange.localBricksToBuilders2();
         }
-        exchange.reportComplete(2);
+        Report.reportComplete(2);
     }
 }

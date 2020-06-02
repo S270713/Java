@@ -1,6 +1,6 @@
-package com.Java.Threads.Threads_Game.Production;
+package com.Java.Threads.Threads_Game_Exchange.Production;
 
-import com.Java.Threads.Threads_Game.Exchange.Exchange;
+import com.Java.Threads.Threads_Game_Exchange.Exchange.Exchange;
 
 //Класс - Производство кирпичей №2.
 public class FactoryBricks2 implements Runnable {
