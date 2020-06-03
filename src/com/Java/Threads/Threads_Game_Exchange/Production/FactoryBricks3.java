@@ -12,7 +12,9 @@ public class FactoryBricks3 implements Runnable {
 
     public void run() {
         for (int i = 1; i < 11; i++) {
-            exchange.localBricksFromFactory3();
+            exchange.localBricksFromFactory1();
+            exchange.exchangeServer.setInfoFactory3(1);
+            //exchange.setBricks(1);
         }
     }
 }
