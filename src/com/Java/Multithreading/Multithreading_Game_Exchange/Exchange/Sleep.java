@@ -1,4 +1,4 @@
-package com.Java.Threads.Threads_Game_Exchange.Exchange;
+package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 //Замедление игры для удобства восприятия.
 
 public class Sleep {

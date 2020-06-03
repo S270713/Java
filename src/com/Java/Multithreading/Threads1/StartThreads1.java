@@ -1,4 +1,4 @@
-package com.Java.Threads.Threads1;
+package com.Java.Multithreading.Threads1;
 
 public class StartThreads1 {
     public static void main(String[] args) throws InterruptedException  {

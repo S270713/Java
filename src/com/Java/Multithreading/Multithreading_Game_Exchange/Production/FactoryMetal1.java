@@ -1,7 +1,7 @@
-package com.Java.Threads.Threads_Game_Exchange.Production;
+package com.Java.Multithreading.Multithreading_Game_Exchange.Production;
 // Класс - завод по производуству металлических конструкций.
 
-import com.Java.Threads.Threads_Game_Exchange.Exchange.Exchange;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
 
 public class FactoryMetal1 implements Runnable {
 

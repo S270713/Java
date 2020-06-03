@@ -1,4 +1,4 @@
-package com.Java.Threads.Threads1;
+package com.Java.Multithreading.Threads1;
 
 public class MySecondThread extends Thread {
     public void run() {

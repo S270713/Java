@@ -1,4 +1,4 @@
-package com.Java.Threads.Threads_Game_Exchange;
+package com.Java.Multithreading.Multithreading_Game_Exchange;
 // Игра - биржа.
 // Участники:
 // Биржа.
@@ -17,15 +17,15 @@ package com.Java.Threads.Threads_Game_Exchange;
 // daemons, join
 // Кирпичный завод сам стартует потоки для запуска других заводов, поставляющих материал для производства кирпичей.
 
-import com.Java.Threads.Threads_Game_Exchange.Builders.BuilderBridges1;
-import com.Java.Threads.Threads_Game_Exchange.Builders.BuilderBuildings1;
-import com.Java.Threads.Threads_Game_Exchange.Builders.BuilderBuildings2;
-import com.Java.Threads.Threads_Game_Exchange.Builders.BuilderBuildings3;
-import com.Java.Threads.Threads_Game_Exchange.Exchange.Exchange;
-import com.Java.Threads.Threads_Game_Exchange.Production.FactoryBricks1;
-import com.Java.Threads.Threads_Game_Exchange.Production.FactoryBricks2;
-import com.Java.Threads.Threads_Game_Exchange.Production.FactoryBricks3;
-import com.Java.Threads.Threads_Game_Exchange.Production.FactoryMetal1;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBridges1;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings1;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings2;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings3;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks1;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks2;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks3;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryMetal1;
 
 public class StartGame {
     public static void main(String[] args) {

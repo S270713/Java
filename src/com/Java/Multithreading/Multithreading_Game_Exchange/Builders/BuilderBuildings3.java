@@ -1,7 +1,7 @@
-package com.Java.Threads.Threads_Game_Exchange.Builders;
+package com.Java.Multithreading.Multithreading_Game_Exchange.Builders;
 
-import com.Java.Threads.Threads_Game_Exchange.Exchange.Exchange;
-import com.Java.Threads.Threads_Game_Exchange.Exchange.Report;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Report;
 
 //Класс - Застройщик3.
 public class BuilderBuildings3 implements Runnable {
