@@ -1,6 +1,6 @@
 package com.Java.Multithreading.ManyThreadsInnerSynchronized;
 
-// Несколько потоков (одного обьекта) внутри синхронизированного метода.
+// Несколько потоков (одного обьекта) ОДНОВРЕМЕННО внутри синхронизированного метода.
 
 public class ManyThreads {
     public static void main(String[] args) {
