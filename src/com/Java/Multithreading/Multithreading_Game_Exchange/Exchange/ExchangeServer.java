@@ -1,16 +1,14 @@
 package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 
 public class ExchangeServer {
+    private int amountProducts = 0;
+    public static int limitWarehouse = 3;//ограничения склада по любой продукции.
 
-    //СЕКЦИЯ - кирпичи - здания.
-    public static int bricks = 0;
-    public static int bricksLimitWarehouse = 3;//ограничения склада по кирпичам.
-
-    public void setBricks(int bricks) {
-        this.bricks = this.bricks + bricks;
+    public void setAmountProducts(int amount) {
+        amountProducts = amountProducts + amount;
     }
-    public int getBricks() {
-        return bricks;
+    public int getAmountProducts() {
+        return amountProducts;
     }
 
     private int infoFactory1 = 0;
@@ -25,6 +23,7 @@ public class ExchangeServer {
     }
 
     public void setInfoFactory1(int infoFactory1) {
+
         this.infoFactory1 = this.infoFactory1 + infoFactory1;
     }
 
@@ -68,27 +67,6 @@ public class ExchangeServer {
         this.infoFloors3 = this.infoFloors3 + infoFloors3;
     }
 
-    //СЕКЦИЯ - металличкеские констуркции - мосты.
-
-    private int metal = 0;//Кол-во произведенного металла (хранится на складе)
-    private int metalLimitWarehouse = 1;//ограничения склада по металлическим конструкциям.
-
-    public int getMetal() {
-        return metal;
-    }
-    
-    public void setMetal(int metal) {
-        this.metal = this.metal + metal;
-    }
-
-    public int getMetalLimitWarehouse() {
-        return metalLimitWarehouse;
-    }
-
-    public void setMetalLimitWarehouse(int metalLimitWarehouse) {
-        this.metalLimitWarehouse = this.metalLimitWarehouse + metalLimitWarehouse;
-    }
-    
 
     private int infoFactoryMetal1 = 0;
     private int bridges = 0;
@@ -108,5 +86,6 @@ public class ExchangeServer {
     public void setBridges(int bridges) {
         this.bridges = this.bridges + bridges;
     }
+
 
 }

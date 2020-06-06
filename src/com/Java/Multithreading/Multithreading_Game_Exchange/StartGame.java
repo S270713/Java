@@ -16,6 +16,7 @@ package com.Java.Multithreading.Multithreading_Game_Exchange;
 // Оптимизировать наименования полей.
 // daemons, join
 // Кирпичный завод сам стартует потоки для запуска других заводов, поставляющих материал для производства кирпичей.
+// вложенные синхронизированные метода
 
 import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBridges1;
 import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings1;
@@ -27,9 +28,12 @@ import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBr
 import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks3;
 import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryMetal1;
 
+//Commit: Отчетность одной строкой динамически изменяющейся. Приведение 4-х методов в Exchange к двум - производители, потребители.
+// Организация хранения количества товара любого вида в одной переменной, через объекты. Оптимизация кода, кас-ся отчетности.
+
 public class StartGame {
     public static void main(String[] args) {
-        System.out.println("Игра началась (будет запущено 8 потоков).");
+        /////System.out.println("Игра началась (будет запущено 8 потоков).");
         Exchange exchange = new Exchange();
 
         //Блок: Кирпичи - Здания.

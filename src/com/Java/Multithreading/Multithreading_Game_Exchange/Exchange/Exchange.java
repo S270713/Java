@@ -2,79 +2,44 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 //Класс - Биржа.
 
 public class Exchange {
+
+
+
+    public ExchangeServer actualSection;
+    public ExchangeServer sectionBricks = new ExchangeServer();
+    public ExchangeServer sectionMetal = new ExchangeServer();
+
     Report report = new Report();
+    Exchange exchange;
     public ExchangeServer exchangeServer = new ExchangeServer();
-    //Метод - Производство кирпичей.
-    public synchronized void localBricksFromFactory1() {
-        while (exchangeServer.bricks >= exchangeServer.bricksLimitWarehouse) {
+    //Метод - Производство
+    public synchronized void workManufacturers(int numberSection) {
+
+        if (numberSection == 1001) { actualSection = sectionBricks; }
+        if (numberSection == 1002) { actualSection = sectionMetal; }
+        while (actualSection.getAmountProducts() >= actualSection.limitWarehouse) {
             try {
                 wait();
             } catch (InterruptedException e) {}
         }
         Sleep.sleep();
-        exchangeServer.setBricks(1);
-        report.printReport(exchangeServer.bricks, exchangeServer.getInfoFactory1(), exchangeServer.getInfoFactory2(), exchangeServer.getInfoFactory3(), exchangeServer.getInfoFloors1(), exchangeServer.getInfoFloors2(), exchangeServer.getInfoFloors3(), exchangeServer.getMetal(), exchangeServer.getBridges());
+        actualSection.setAmountProducts(1);
+        report.printReport(actualSection);
+
         notifyAll();
     }
-
-    //Метод - Постройка зданий.
-    public synchronized void localBricksToBuilders1() {
-        while (exchangeServer.bricks < 1) {
+    //Метод - Потребители забирают товар с биржи .
+    public synchronized void workConsumers(int numberSection) {
+        if (numberSection == 1001) { actualSection = sectionBricks; }
+        if (numberSection == 1002) { actualSection = sectionMetal; }
+        while (actualSection.getAmountProducts() < 1) {
             try {
                 wait();
             } catch (InterruptedException e) {}
         }
         Sleep.sleep();
-        exchangeServer.setBricks(-1);
-        report.printReport(exchangeServer.bricks, exchangeServer.getInfoFactory1(), exchangeServer.getInfoFactory2(), exchangeServer.getInfoFactory3(), exchangeServer.getInfoFloors1(), exchangeServer.getInfoFloors2(), exchangeServer.getInfoFloors3(), exchangeServer.getMetal(), exchangeServer.getBridges());
+        actualSection.setAmountProducts(-1);
+        report.printReport(actualSection);
         notifyAll();
     }
-
-    //Метод - Производство металла для мостов.
-    public synchronized void productionMetal1() {
-        while (exchangeServer.getMetal() >= exchangeServer.getMetalLimitWarehouse()) {
-            try {
-                wait();
-            } catch (InterruptedException e) {}
-        }
-        Sleep.sleep();
-        exchangeServer.setMetal(1);
-        report.printReport(
-                exchangeServer.bricks,
-                exchangeServer.getInfoFactory1(),
-                exchangeServer.getInfoFactory2(),
-                exchangeServer.getInfoFactory3(),
-                exchangeServer.getInfoFloors1(),
-                exchangeServer.getInfoFloors2(),
-                exchangeServer.getInfoFloors3(),
-                exchangeServer.getMetal(),
-                exchangeServer.getBridges()
-        );
-        notifyAll();
-    }
-
-    //Метод - Постройка мостов.
-    public synchronized void productionBridge1() {
-        while (exchangeServer.getMetal() < 1) {
-            try {
-                wait();
-            } catch (InterruptedException e) {}
-        }
-        Sleep.sleep();
-        exchangeServer.setMetal(-1);
-        report.printReport(
-                exchangeServer.bricks,
-                exchangeServer.getInfoFactory1(),
-                exchangeServer.getInfoFactory2(),
-                exchangeServer.getInfoFactory3(),
-                exchangeServer.getInfoFloors1(),
-                exchangeServer.getInfoFloors2(),
-                exchangeServer.getInfoFloors3(),
-                exchangeServer.getMetal(),
-                exchangeServer.getBridges()
-        );
-        notifyAll();
-    }
-    
-
 }

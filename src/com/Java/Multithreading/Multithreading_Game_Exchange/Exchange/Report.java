@@ -3,33 +3,35 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 public class Report {
     long lastTime = System.currentTimeMillis();
     long periodTime = 400;//Шаг игры (периодичность отчетности).
+    Exchange exchange;
 
     //Отчетность:
-    public void printReport(
-            int bricks,
-            int infoFactory1,
-            int infoFactory2,
-            int infoFactory3,
-            int infoFloors1,
-            int infoFloors2,
-            int infoFloors3,
-            int metal,
-            int bridges) {
+    public void printReport(ExchangeServer actualSection) {
+        //System.out.println("test " + actualSection.getAmountProducts());
 
+        //") Кирпич (" + getAmountProducts(sectionBricks) +
         if ((System.currentTimeMillis() - lastTime) > periodTime) {
-            //Отчет по производству кирпича и постройке зданий.
-            System.out.println("Отчет (Кирпичи/Здания): 1 завод  (" + infoFactory1 + ")  2 завод  (" + infoFactory2 + ")  3 завод  (" + infoFactory3 + ")  Кирпич на складе  (" + bricks + ")  Этажей в здании 1  (" + infoFloors1 + ")  Этажей в здании 2  (" + infoFloors2 + ")  Этажей в здании 3  (" + infoFloors3 + ")");
-            //Отчетность по производству металла и постройке мостов:
-            System.out.println("Отчет (Металл/Мосты): Металла на складе: (" + metal + "); Построено мостов (" + bridges + ").");
+            System.out.print("\r");
+            System.out.print(
+                    "Завод А (" + actualSection.getInfoFactory1() +
+                    ") Завод B (" + actualSection.getInfoFactory2() +
+                    ") Завод C (" + actualSection.getInfoFactory3() +
+                    ") Запасы кирпича (" + actualSection.getAmountProducts() +
+                    ") Здание А (" + actualSection.getInfoFloors1() +
+                    "%) Здание B (" + actualSection.getInfoFloors2() +
+                    "%) Здание C (" + actualSection.getInfoFloors3() +
+                    "%) Завод Металл (" + actualSection.getInfoFactoryMetal1() +
+                    ") Запасы металла (" + actualSection.getAmountProducts() +
+                    ") Мосты (" + actualSection.getBridges() +
+                    ")"
+            );
             lastTime = System.currentTimeMillis();
         }
     }
     public static void reportComplete(int number) {
-        System.out.println("------------------- Здание " + number + " построено! -------------------");
+        /////System.out.println("------------------- Здание " + number + " построено! -------------------");
     }
     public static void reportCompleteBridge(int number) {
-        System.out.println("------------------- Построено " + number + " моста -------------------");
+        /////System.out.println("------------------- Построено " + number + " моста -------------------");
     }
-
-
 }

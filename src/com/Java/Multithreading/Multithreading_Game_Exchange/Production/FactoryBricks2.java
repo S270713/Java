@@ -11,9 +11,10 @@ public class FactoryBricks2 implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i < 11; i++) {
-            exchange.localBricksFromFactory1();
-            exchange.exchangeServer.setInfoFactory2(1);
+        for (int i = 1; i < 101; i++) {
+
+            exchange.workManufacturers(5);
+            exchange.sectionBricks.setInfoFactory2(1);
             //exchange.setBricks(1);
         }
     }

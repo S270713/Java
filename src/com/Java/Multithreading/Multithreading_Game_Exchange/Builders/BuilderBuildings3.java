@@ -12,9 +12,10 @@ public class BuilderBuildings3 implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i < 11; i++) {
-            exchange.localBricksToBuilders1();
-            exchange.exchangeServer.setInfoFloors3(1);
+        for (int i = 1; i < 101; i++) {
+            exchange.workConsumers(5);
+            exchange.sectionBricks.setInfoFloors3(1);
+
             //exchange.setBricks(-1);
         }
         Report.reportComplete(3);
