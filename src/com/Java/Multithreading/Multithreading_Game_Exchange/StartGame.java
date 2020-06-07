@@ -18,18 +18,13 @@ package com.Java.Multithreading.Multithreading_Game_Exchange;
 // Кирпичный завод сам стартует потоки для запуска других заводов, поставляющих материал для производства кирпичей.
 // вложенные синхронизированные метода
 
-import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBridges1;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings1;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings2;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.BuilderBuildings3;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Builders.*;
 import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks1;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks2;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryBricks3;
-import com.Java.Multithreading.Multithreading_Game_Exchange.Production.FactoryMetal1;
+import com.Java.Multithreading.Multithreading_Game_Exchange.Production.*;
 
 //Commit: Отчетность одной строкой динамически изменяющейся. Приведение 4-х методов в Exchange к двум - производители, потребители.
 // Организация хранения количества товара любого вида в одной переменной, через объекты. Оптимизация кода, кас-ся отчетности.
+// Подсвечена строка отчета. Оптимзированы импорты.
 
 public class StartGame {
     public static void main(String[] args) {

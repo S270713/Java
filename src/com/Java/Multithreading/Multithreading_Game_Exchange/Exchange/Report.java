@@ -13,7 +13,7 @@ public class Report {
         if ((System.currentTimeMillis() - lastTime) > periodTime) {
             System.out.print("\r");
             System.out.print(
-                    "Завод А (" + actualSection.getInfoFactory1() +
+                    "\033[31m Завод А (" + actualSection.getInfoFactory1() +
                     ") Завод B (" + actualSection.getInfoFactory2() +
                     ") Завод C (" + actualSection.getInfoFactory3() +
                     ") Запасы кирпича (" + actualSection.getAmountProducts() +

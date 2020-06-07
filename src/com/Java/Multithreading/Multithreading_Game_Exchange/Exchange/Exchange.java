@@ -3,8 +3,7 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 
 public class Exchange {
 
-
-
+    ExchangeSupport exchangeSupport = new ExchangeSupport();
     public ExchangeServer actualSection;
     public ExchangeServer sectionBricks = new ExchangeServer();
     public ExchangeServer sectionMetal = new ExchangeServer();
@@ -14,9 +13,16 @@ public class Exchange {
     public ExchangeServer exchangeServer = new ExchangeServer();
     //Метод - Производство
     public synchronized void workManufacturers(int numberSection) {
+        //actualSection = exchangeSupport.chooseProduct(numberSection);
+        switch (numberSection) {
+            case 1001:
+                actualSection = sectionBricks;
+                break;
+            case 1002:
+                actualSection = sectionMetal;
+                break;
+        }
 
-        if (numberSection == 1001) { actualSection = sectionBricks; }
-        if (numberSection == 1002) { actualSection = sectionMetal; }
         while (actualSection.getAmountProducts() >= actualSection.limitWarehouse) {
             try {
                 wait();
@@ -30,8 +36,16 @@ public class Exchange {
     }
     //Метод - Потребители забирают товар с биржи .
     public synchronized void workConsumers(int numberSection) {
-        if (numberSection == 1001) { actualSection = sectionBricks; }
-        if (numberSection == 1002) { actualSection = sectionMetal; }
+        //actualSection = exchangeSupport.chooseProduct(numberSection);
+        switch (numberSection) {
+            case 1001:
+                actualSection = sectionBricks;
+                break;
+            case 1002:
+                actualSection = sectionMetal;
+                break;
+        }
+
         while (actualSection.getAmountProducts() < 1) {
             try {
                 wait();
