@@ -13,11 +13,8 @@ public class BuilderBuildings2 implements Runnable {
 
     public void run() {
         for (int i = 1; i < 101; i++) {
-            exchange.workConsumers(5);
+            exchange.workConsumers(1001);
             exchange.sectionBricks.setInfoFloors2(1);
-
-            //exchange.setBricks(-1);
         }
-        Report.reportComplete(2);
     }
 }

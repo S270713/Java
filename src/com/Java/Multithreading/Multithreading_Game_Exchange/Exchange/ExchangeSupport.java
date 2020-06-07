@@ -2,12 +2,10 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 //Вспомогательный класс для функционирования биржи.
 
 public class ExchangeSupport {
-    public ExchangeServer actualSection;
-    public ExchangeServer sectionBricks;
-    public ExchangeServer sectionMetal;
+    ExchangeServer actualSection;
 
     //Идентификация продукта.
-    public ExchangeServer chooseProduct(int numberSection) {
+    public ExchangeServer chooseProduct(int numberSection, ExchangeServer sectionBricks, ExchangeServer sectionMetal) {
         switch (numberSection) {
             case 1001:
                 actualSection = sectionBricks;

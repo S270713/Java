@@ -2,11 +2,12 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
 
 public class ExchangeServer {
     private int amountProducts = 0;
-    public static int limitWarehouse = 3;//ограничения склада по любой продукции.
+    public static final int limitWarehouse = 3;//ограничения склада по любой продукции.
 
     public void setAmountProducts(int amount) {
         amountProducts = amountProducts + amount;
     }
+
     public int getAmountProducts() {
         return amountProducts;
     }
@@ -67,7 +68,6 @@ public class ExchangeServer {
         this.infoFloors3 = this.infoFloors3 + infoFloors3;
     }
 
-
     private int infoFactoryMetal1 = 0;
     private int bridges = 0;
 
@@ -86,6 +86,4 @@ public class ExchangeServer {
     public void setBridges(int bridges) {
         this.bridges = this.bridges + bridges;
     }
-
-
 }
