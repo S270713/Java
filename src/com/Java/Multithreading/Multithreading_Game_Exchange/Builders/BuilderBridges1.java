@@ -3,7 +3,7 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Builders;
 
 import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
 
-public class BuilderBridges1 implements Runnable {
+public class BuilderBridges1 extends Thread {
 
     Exchange exchange;
     public BuilderBridges1(Exchange exchange) {
@@ -11,9 +11,14 @@ public class BuilderBridges1 implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i <= 100; i++) {//В процентах
-            exchange.workManufacturers(1002);
+        Thread.currentThread().setName("BuilderBridges1");
+        int i = 1;
+
+        while (!isInterrupted()) {
+            exchange.workConsumers(1002);
             exchange.sectionMetal.setBridges(1);
+            i++;
         }
     }
 }
+

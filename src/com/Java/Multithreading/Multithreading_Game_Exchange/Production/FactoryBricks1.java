@@ -3,7 +3,7 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Production;
 import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
 
 //Класс - Производство кирпичей №1.
-public class FactoryBricks1 implements Runnable {
+public class FactoryBricks1 extends Thread {
 
     Exchange exchange;
     public FactoryBricks1(Exchange exchange) {
@@ -11,9 +11,12 @@ public class FactoryBricks1 implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i <= 100; i++) {
+        int i = 1;
+        while(!isInterrupted()) {
+
             exchange.workManufacturers(1001);
             exchange.sectionBricks.setInfoFactory1(1);
+            i++;
         }
     }
 }

@@ -17,6 +17,7 @@ import com.Java.Game2.MailPresent_TryWithResources.StartMailPresent;
 import com.Java.Game2.Present_Constructor.StartPresent_Constructor;
 import com.Java.Game2.Queue_Deque.StartQueues;
 import com.Java.Game2.ShoppingList.StartShoppingList;
+import com.Java.Game2.Taxi_IsA_HasA.StartTaxi_IsA_HasA;
 import com.Java.Game2.TwoQueue.StartTwoQueue;
 import com.Java.Game2.WalkShop.StartWalkShopAlpha;
 
@@ -80,6 +81,9 @@ public class StepByStep {
 
         StartDatabaseClone startDatabaseClone = new StartDatabaseClone();// clone()
         startDatabaseClone.startDatabaseClone();//Техническая работа с БД.
+
+        StartTaxi_IsA_HasA startTaxi_isA_hasA = new StartTaxi_IsA_HasA();// Is A; Has A.
+        startTaxi_isA_hasA.StartTaxi_IsA_HasA();//выбор такси
 
     }
 }

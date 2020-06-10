@@ -4,7 +4,7 @@ import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
 import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Report;
 
 //Класс - Застройщик2.
-public class BuilderBuildings2 implements Runnable {
+public class BuilderBuildings2 extends Thread {
 
     Exchange exchange;
     public BuilderBuildings2(Exchange exchange) {
@@ -12,9 +12,12 @@ public class BuilderBuildings2 implements Runnable {
     }
 
     public void run() {
-        for (int i = 1; i < 101; i++) {
+        Thread.currentThread().setName("BuilderBuildings2");
+        int i = 1;
+        while(!isInterrupted()) {
             exchange.workConsumers(1001);
             exchange.sectionBricks.setInfoFloors2(1);
+            i++;
         }
     }
 }

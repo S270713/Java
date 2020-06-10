@@ -1,8 +1,9 @@
 package com.Java.Multithreading.Multithreading_Game_Exchange.Exchange;
+//volatile
 
 public class ExchangeServer {
-    private int amountProducts = 0;
-    public static final int limitWarehouse = 3;//ограничения склада по любой продукции.
+    private volatile int amountProducts = 0;
+    public int limitWarehouse = 1;//ограничения склада по любой продукции.
 
     public void setAmountProducts(int amount) {
         amountProducts = amountProducts + amount;

@@ -3,17 +3,19 @@ package com.Java.Multithreading.Multithreading_Game_Exchange.Production;
 
 import com.Java.Multithreading.Multithreading_Game_Exchange.Exchange.Exchange;
 
-public class FactoryMetal1 implements Runnable {
+public class FactoryMetal1 extends Thread {
 
     Exchange exchange;
     public FactoryMetal1(Exchange exchange) {
         this.exchange = exchange;
     }
 
+    int i = 1;
     public void run() {
-        for (int i = 1; i <=100; i++) {
+        while(!isInterrupted()) {
             exchange.workManufacturers(1002);
             exchange.sectionMetal.setInfoFactoryMetal1(1);
+            i++;
         }
     }
 }
